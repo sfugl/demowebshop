@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 /**
  * Model api object for order line input and output
  */
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

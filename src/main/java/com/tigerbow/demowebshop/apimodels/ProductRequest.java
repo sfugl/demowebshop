@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 /**
  * Model api object for product input
  */
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

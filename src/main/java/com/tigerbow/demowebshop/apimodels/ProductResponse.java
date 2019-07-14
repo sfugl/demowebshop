@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 /**
  * Model api object for product output. Also used as input object in OrderLine
  */
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
