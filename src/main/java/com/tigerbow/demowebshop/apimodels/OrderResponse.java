@@ -20,7 +20,7 @@ public class OrderResponse {
     private Long id;
     private String email;
     private List<OrderLine> orderLines;
-    private BigDecimal totalPrice;
+    private BigDecimal totalOrderPrice;
     private OffsetDateTime orderTime;
 
 }

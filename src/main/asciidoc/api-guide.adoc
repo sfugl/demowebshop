@@ -1,0 +1,80 @@
+= Demo Web Shop API Guide
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+:operation-curl-request-title: Example request
+:operation-http-response-title: Example response
+
+
+[[overview]]
+= Overview
+
+This API implements a simple demo web shop.
+
+[[overview-http-verbs]]
+== HTTP verbs
+
+|===
+| Verb | Usage
+
+| `GET`
+| Used to retrieve one or more resource
+
+| `POST`
+| Used to create a new resource
+
+|===
+
+[[overview-http-status-codes]]
+== HTTP status codes
+
+|===
+| Status code | Usage
+
+| `200 OK`
+| The request completed successfully
+
+| `400 Bad Request`
+| The request was malformed. The response body will include an error providing further information
+
+|===
+
+[[resources]]
+= Resources
+
+[[resources-product]]
+== Product
+
+A product is sold at the shop.
+
+[[resources-product-create]]
+== Create a product
+
+A `POST` request is used to create a product.
+
+operation::create-product-ok[snippets='curl-request,http-response']
+
+
+[[resources-product-create]]
+== List all products
+
+A `GET` request is used to fetch all product in the store.
+
+operation::list-all-products-ok[snippets='curl-request,http-response']
+
+[[resources-order]]
+== Order
+
+A customer order for goods from the product list.
+
+[[resources-order-create]]
+== Create an order
+
+A `POST` request is used to create an order.
+
+operation::create-order-ok[snippets='curl-request,http-response']
+
+

@@ -1,6 +1,7 @@
 package com.tigerbow.demowebshop.apimodels;
 
 import org.assertj.core.util.Lists;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Set;
 
 import static junit.framework.TestCase.assertTrue;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert. assertEquals;
 
 public class OrderRequestValidationTest {
 
@@ -92,6 +93,11 @@ public class OrderRequestValidationTest {
         ConstraintViolation<OrderRequest> violation = violations.iterator().next();
         assertEquals("orderLines", violation.getPropertyPath().toString());
         assertEquals(new ArrayList<>(), violation.getInvalidValue());
+    }
+
+    @AfterClass
+    public static void close() {
+        validatorFactory.close();
     }
 
 }

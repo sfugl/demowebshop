@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -23,5 +24,12 @@ public class OrderRequest {
     private String email;
     @NotEmpty
     private List<OrderLine> orderLines;
+
+    public BigDecimal getTotalPrice() {
+        BigDecimal result = new BigDecimal("0");
+        for (OrderLine orderLine : orderLines)
+            result = result.add(orderLine.getAmount().multiply(orderLine.getProduct().getPrice()));
+        return result;
+    }
 
 }

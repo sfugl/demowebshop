@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-public class ProductJpaTest {
+public class ProductEntityJpaTest {
 
     @Autowired
     private TestEntityManager entityManager;
@@ -25,11 +25,11 @@ public class ProductJpaTest {
 
     @Test
     public void testCreateAndFetch() {
-        Product product = new Product(null,"Candy", new BigDecimal("12.95"));
-        entityManager.persist(product);
-        List<Product> products = repository.findAll();
-        assertEquals(1, products.size());
-        assertEquals(product, products.get(0));
+        ProductEntity productEntity = new ProductEntity(null,"Candy", new BigDecimal("12.95"));
+        entityManager.persist(productEntity);
+        List<ProductEntity> productEntities = repository.findAll();
+        assertEquals(1, productEntities.size());
+        assertEquals(productEntity, productEntities.get(0));
     }
 
 }

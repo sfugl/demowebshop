@@ -6,8 +6,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
 /**
@@ -18,11 +18,9 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderLine {
+public class OrderLineEntity {
 
     private @Column(precision = 10, scale = 2) @NotNull BigDecimal amount;
-    private @NotNull Long productId;
-    private @Size(max = 32) @NotNull String name;
-    private @Column(precision = 10, scale = 2) @NotNull BigDecimal price;
+    private @Embedded @NotNull OrderLineProductEntity product;
 
 }

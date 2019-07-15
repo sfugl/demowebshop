@@ -1,5 +1,6 @@
 package com.tigerbow.demowebshop.apimodels;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -13,7 +14,7 @@ import java.util.Set;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
-public class ProductResponseValidationTest {
+public class ProductEntityResponseValidationTest {
 
     private static ValidatorFactory validatorFactory;
     private static Validator validator;
@@ -45,6 +46,11 @@ public class ProductResponseValidationTest {
         ConstraintViolation<ProductResponse> violation = violations.iterator().next();
         assertEquals("id", violation.getPropertyPath().toString());
         assertEquals(null, violation.getInvalidValue());
+    }
+
+    @AfterClass
+    public static void close() {
+        validatorFactory.close();
     }
 
 }
